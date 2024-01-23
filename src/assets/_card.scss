@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;600;700;800;900&display=swap');
+
+.list__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 80%;
+    margin: 0 auto;
+
+    @media (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 680px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+        font-weight: 500;
+
+        .thumb {
+            background-color: #f4f4f4;
+            height: 250px;
+            margin-bottom: 30px;
+
+            >img {
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .content {
+            >div {
+                margin-bottom: 10px;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
