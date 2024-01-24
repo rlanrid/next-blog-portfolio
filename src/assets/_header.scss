@@ -19,33 +19,17 @@
             font-size: 36px;
             margin-bottom: 40px;
         }
-
-        .header__nav {
-            ul {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                li {
-                    display: inline-block;
-
-                    a {
-                        margin: 0 30px;
-                    }
-                }
-            }
-        }
     }
 }
 
-.header__center {
-    ul {
-        li {
+.header__nav {
+    >ul {
+        text-align: center;
+        >li {
             display: inline-block;
 
-            a {
-                padding: 0 15px;
-                font-weight: 800;
+            >a {
+                margin: 0 30px;
             }
         }
     }
@@ -97,5 +81,25 @@
 
     .header__nav {
         display: none;
+
+        &.show {
+            display: block;
+    
+            >ul {
+                position: absolute;
+                width: 100%;
+                right: 0;
+                top: 50px;
+                text-align: right;
+
+                >li {
+                    display: block;
+
+                    >a {
+                        margin: 0;
+                    }
+                }
+            }
+        }
     }
 }

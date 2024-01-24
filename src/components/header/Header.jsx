@@ -8,7 +8,7 @@ export default function Header() {
             <div className="header__wrap">
                 <div className="container">
                     <h1 className="logo">AMBITIOUS</h1>
-                    <nav className='header__nav'>
+                    <nav className='header__nav show'>
                         <ul>
                             <li><Link href='/'>Home</Link></li>
                             <li><Link href='/'>Blog</Link></li>
@@ -17,7 +17,8 @@ export default function Header() {
                             <li><Link href='/'>Sign In</Link></li>
                         </ul>
                     </nav>
-                    <div className="header__mobile">
+                    <div className="header__mobile" id="navToggle" aria-controls="primary-menu" aria-expanded="false"
+                        role="button">
                         <span></span>
                     </div>
                     <Theme />
