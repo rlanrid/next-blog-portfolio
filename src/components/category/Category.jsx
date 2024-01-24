@@ -17,13 +17,12 @@ const getData = async () => {
 export default async function Category() {
     const data = await getData();
 
-    console.log(data);
-
     return (
         <section className='blog__category'>
             <ul>
+                <li><Link href='/'>all</Link></li>
                 {data.map((item) => (
-                    <li key={item.id}><Link href=''>{item.title}</Link></li>
+                    <li key={item.id}><Link href={`?category=${item.slug}`}>{item.title}</Link></li>
                 ))}
             </ul>
         </section>

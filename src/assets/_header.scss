@@ -11,6 +11,7 @@
         width: 80%;
         margin: 0 auto;
         font-family: 'Kaisei Decol', serif;
+        position: relative;
 
         .logo {
             width: 100%;
@@ -34,23 +35,6 @@
                 }
             }
         }
-
-        // .header__left {
-        //     width: 25%;
-
-        //     .logo {
-        //         font-weight: 900;
-        //     }
-        // }
-
-        // .header__center {
-        //     text-align: center;
-        // }
-
-        // .header__right {
-        //     width: 25%;
-        //     text-align: right;
-        // }
     }
 }
 
@@ -69,6 +53,49 @@
 
 .header__mobile {
     display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
 
-    span {}
+    span {
+        display: inline-block;
+        width: 30px;
+        height: 2px;
+        background-color: var(--black);
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            top: 7px;
+            left: 0;
+            background-color: var(--black);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            bottom: 7px;
+            left: 0;
+            background-color: var(--black);
+        }
+    }
+}
+
+
+@media(max-width: 780px) {
+    .header__mobile {
+        display: block;
+    }
+
+    .header__nav {
+        display: none;
+    }
 }

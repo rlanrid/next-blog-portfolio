@@ -143,6 +143,66 @@ i {
   font: inherit;
 }
 
+@font-face {
+  font-family: 'NanumSquareNeo';
+  font-weight: 300;
+  font-style: normal;
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.eot');
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.eot?#iefix') format('embedded-opentype'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.woff2') format('woff2'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.woff') format('woff'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.ttf') format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.eot');
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.eot?#iefix') format('embedded-opentype'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.woff2') format('woff2'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.woff') format('woff'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.ttf') format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo';
+  font-weight: 700;
+  font-style: normal;
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.eot');
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.eot?#iefix') format('embedded-opentype'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.woff2') format('woff2'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.woff') format('woff'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.ttf') format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo';
+  font-weight: 800;
+  font-style: normal;
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.eot');
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.eot?#iefix') format('embedded-opentype'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.woff2') format('woff2'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.woff') format('woff'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.ttf') format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo';
+  font-weight: 900;
+  font-style: normal;
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.eot');
+  src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.eot?#iefix') format('embedded-opentype'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.woff2') format('woff2'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.woff') format('woff'),
+    url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.ttf') format("truetype");
+  font-display: swap;
+}
+
 
 /* 조선일보명조 */
 @font-face {
@@ -214,7 +274,7 @@ i {
   --red: #f00;
   --green: #80f36c;
 
-  --black100: #383838;
+  --black100: #242424;
   --black200: #59595A;
   --black300: #727272;
   --black400: #8A8A8A;
@@ -240,26 +300,6 @@ body {
 main {
   min-height: 700px;
 }
-
-
-.footer__wrap {
-  margin-top: 70px;
-}
-
-.footer__inner {
-  background-color: var(--black);
-  padding: 0 90px;
-  color: var(--white);
-  min-height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.fb__right {
-  text-align: center;
-}
-
 
 .dark {
   --black: #fff;
@@ -374,6 +414,28 @@ main {
 
       p {
         font-size: 12px;
+      }
+    }
+  }
+}
+
+.blog__page {
+  margin-top: 50px;
+  text-align: center;
+
+  ul {
+    li {
+      display: inline-block;
+      margin: 0 2px;
+      border: 1px solid var(--black);
+      padding: 5px 8px;
+      color: var(--black);
+      background-color: var(--white);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--white);
+        background-color: var(--black);
       }
     }
   }

@@ -17,26 +17,9 @@ export default function Header() {
                             <li><Link href='/'>Sign In</Link></li>
                         </ul>
                     </nav>
-                    {/* <div className="header__left">
-                        <h1 className="logo">
-                            CODEWA
-                        </h1>
-                    </div>
-                    <div className="header__center">
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/">Notice</a></li>
-                            <li><a href="/">Blog</a></li>
-                            <li><a href="/">About us</a></li>
-                        </ul>
-                    </div>
-                    <div className='header__mobile'>
+                    <div className="header__mobile">
                         <span></span>
                     </div>
-                    <div className="header__right">
-                        <a href="/" className="login">LogIn</a>
-                        <a href="/" className="join">Sign up</a>
-                    </div> */}
                     <Theme />
                 </div>
             </div>

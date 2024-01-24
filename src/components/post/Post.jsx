@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
+import Card from '../card/Card'
+import Pagination from '../pagination/Pagination'
 
-const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/post", {
+const getData = async (page, category) => {
+    const res = await fetch(`http://localhost:3000/api/post?page=${page}&category=${category || ''}`, {
         cache: "no-store"
     })
 
@@ -13,32 +15,20 @@ const getData = async () => {
     return res.json()
 }
 
-export default async function Post() {
-    const data = await getData();
+export default async function Post({ page, category }) {
+    const { posts, count } = await getData(page, category);
+    const postView = 2;
 
-    console.log(data);
+    console.log(posts)
 
     return (
-        <div className="list__inner">
-            {data.map((item, index) => (
-                <div className="list">
-                    <div className="thumb">
-                        <div className="image">
-                            <img src="" alt="게시글썸네일" />
-                        </div>
-                        <div className="info">
-                            <div className="profile"></div>
-                            <div className="view"></div>
-                            <div className="like"></div>
-                        </div>
-                    </div>
-                    <div className="content">
-                        <div className="title">{item.title}</div>
-                        <div className="date">{item.createdAt}</div>
-                        <div className="desc">{item.desc}</div>
-                    </div>
-                </div>
-            ))}
-        </div>
+        <>
+            <div className="list__inner">
+                {posts.map((item) => (
+                    <Card item={item} key={item.id} />
+                ))}
+            </div>
+            <Pagination page={page} count={count} postView={postView} />
+        </>
     )
 }
