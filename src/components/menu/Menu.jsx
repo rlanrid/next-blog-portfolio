@@ -5,9 +5,6 @@ import Link from 'next/link'
 import React from 'react'
 
 export default function Menu() {
-    // const status = "unauthenticated"
-    // const name = "rlan"
-
     const { data: session, status } = useSession();
 
     return (

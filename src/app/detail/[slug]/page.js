@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './page.module.scss'
+import Comments from '@/components/comments/Comments'
 
 const getData = async (slug) => {
     const res = await fetch(`http://localhost:3000/api/post/${slug}`, {
@@ -31,7 +32,8 @@ export default async function page({ params }) {
                         {data.desc}
                     </div>
                 </div>
-                <div className={styles.comment__list}>
+                <Comments slug={slug} />
+                {/* <div className={styles.comment__list}>
                     <div className={styles.comment}>
                         <div className={styles.user}>                            <div className="profile"></div>
                             <div className={styles.info}>
@@ -43,29 +45,7 @@ export default async function page({ params }) {
                             멋진 글입니다.
                         </div>
                     </div>
-                    <div className={styles.comment}>
-                        <div className={styles.user}>                            <div className="profile"></div>
-                            <div className={styles.info}>
-                                <p className={styles.name}>테스트</p>
-                                <p className={styles.date}>2024년 1월 19일</p>
-                            </div>
-                        </div>
-                        <div className={styles.cont}>
-                            멋진 글입니다.
-                        </div>
-                    </div>
-                    <div className={styles.comment}>
-                        <div className={styles.user}>                            <div className="profile"></div>
-                            <div className={styles.info}>
-                                <p className={styles.name}>테스트</p>
-                                <p className={styles.date}>2024년 1월 19일</p>
-                            </div>
-                        </div>
-                        <div className={styles.cont}>
-                            멋진 글입니다.
-                        </div>
-                    </div>
-                </div>
+                </div> */}
             </section>
         </main>
     )

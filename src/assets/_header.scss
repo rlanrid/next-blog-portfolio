@@ -25,6 +25,7 @@
 .header__nav {
     >ul {
         text-align: center;
+
         >li {
             display: inline-block;
 
@@ -84,19 +85,26 @@
 
         &.show {
             display: block;
-    
+
             >ul {
                 position: absolute;
-                width: 100%;
+                width: 100px;
                 right: 0;
                 top: 50px;
                 text-align: right;
+                display: flex;
+                justify-content: flex-end;
+                flex-wrap: wrap;
 
                 >li {
-                    display: block;
+                    width: 100%;
 
                     >a {
                         margin: 0;
+                    }
+
+                    span {
+                        cursor: pointer;
                     }
                 }
             }
