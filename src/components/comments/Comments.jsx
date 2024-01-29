@@ -16,7 +16,7 @@ const fetcher = async (url) => {
 }
 
 export default function Comments({ slug }) {
-    const { status } = useSession();
+    const { data: session, status } = useSession();
 
     const { data, mutate, isLoading } = useSWR(`http://localhost:3000/api/comments?slug=${slug}`, fetcher)
 
@@ -29,6 +29,31 @@ export default function Comments({ slug }) {
         });
         mutate()
     }
+
+    const handleDelete = async (commentId) => {
+        const confirmDelete = window.confirm("댓글을 삭제하시겠습니까?");
+        if (confirmDelete) {
+            try {
+                const res = await fetch("/api/comment", {
+                    method: "DELETE",
+                    body: JSON.stringify({
+                        id: commentId,
+                    }),
+                });
+
+                if (res.ok) {
+                    alert("댓글이 삭제되었습니다.");
+                    mutate();
+                } else {
+                    const arrMsg = await res.json();
+                    alert(arrMsg.message || "실패");
+                }
+            } catch (error) {
+                console.error(error);
+                alert("실패");
+            }
+        }
+    };
 
     return (
         <div>
@@ -49,6 +74,9 @@ export default function Comments({ slug }) {
                         <p>{item.user.name}</p>
                         <p>{item.user.createdAt}</p>
                         <p>{item.desc}</p>
+                        {item.user.email === session?.user.email ? (
+                            <p onClick={() => { handleDelete(item.id) }}>삭제</p>
+                        ) : (null)}
                     </div>
                 ))}
             </div>

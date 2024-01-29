@@ -52,3 +52,30 @@ export const POST = async (req) => {
         )
     }
 }
+
+// 댓글 삭제
+export const DELETE = async (req) => {
+    const session = await getAuthSession();
+
+    if (!session) {
+        return new NextResponse(JSON.stringify({ message: "Not Authenticated" }, { status: 401 }))
+    }
+
+    try {
+        const body = await req.json();
+        const { id } = body;
+
+        if (!id) {
+            return new NextResponse(JSON.stringify({ message: "Comment ID is required" }, { status: 400 }));
+        }
+
+        await prisma.Comment.delete({
+            where: { id },
+        });
+
+        return new NextResponse(JSON.stringify({ message: "Comment deleted successfully" }, { status: 200 }));
+    } catch (err) {
+        console.log(err);
+        return new Response(JSON.stringify({ message: "Comment deletion failed" }, { status: 500 }))
+    }
+}
